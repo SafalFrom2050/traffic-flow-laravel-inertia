@@ -11,11 +11,11 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->text('details');
+
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('incident_id');
 
             $table->timestamps();
-
-            $table->foreign('incident_id')->references('id')->on('incidents');
 
         });
     }

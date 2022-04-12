@@ -16,19 +16,28 @@ class IncidentTypesSeeder extends Seeder
     private array $incidentTypes = [
         [
             'name' => 'Road Block',
-            'image' => 'storage/images/road-block.jpg'
+            'image' => 'storage/images/road-block.jpg',
+            'marker' => 'storage/images/marker/road-block-marker.png'
         ],
         [
             'name' => 'Traffic Jam',
-            'image' => 'storage/images/traffic-jam.png'
+            'image' => 'storage/images/traffic-jam.png',
+            'marker' => 'storage/images/marker/traffic-jam-marker.png'
         ],
         [
             'name' => 'Construction',
-            'image' => 'storage/images/construction.jpg'
+            'image' => 'storage/images/construction.jpg',
+            'marker' => 'storage/images/marker/construction-marker.png'
         ],
         [
-            'name' => 'Protests',
-            'image' => 'storage/images/protest.png'
+            'name' => 'Protest',
+            'image' => 'storage/images/protest.png',
+            'marker' => 'storage/images/marker/protest-marker.png'
+        ],
+        [
+            'name' => 'Accident',
+            'image' => 'storage/images/accident.jpg',
+            'marker' => 'storage/images/marker/accident-marker.png'
         ],
 
     ];

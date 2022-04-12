@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Resource;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\IncidentRequest;
 use App\Models\Incident;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class IncidentsController extends Controller
 {
     public function index()
     {
-        $incidents = Incident::all();
+        $incidents = Incident::with('incidentType')->get();
 
         $response['incidents'] = $incidents;
         $response['count'] = $incidents->count();
@@ -22,9 +23,13 @@ class IncidentsController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(IncidentRequest $request)
     {
-        //
+        $incident = Incident::create($request->validated());
+
+        $response['incident'] = $incident;
+
+        return $response;
     }
 
     public function show(Incident $incident)

@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(IncidentTypesSeeder::class);
         $this->call(AchievementSeeder::class);
+        $this->call(IncidentSeeder::class);
     }
 }

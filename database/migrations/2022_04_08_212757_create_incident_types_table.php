@@ -11,7 +11,8 @@ class CreateIncidentTypesTable extends Migration
         Schema::create('incident_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('marker')->nullable();
             $table->string('default_severity')->default(0);
             $table->timestamps();
         });

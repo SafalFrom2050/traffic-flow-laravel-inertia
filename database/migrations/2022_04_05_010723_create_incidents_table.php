@@ -11,9 +11,16 @@ class CreateIncidentsTable extends Migration
         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
-            $table->text('description');
-            $table->tinyInteger('severity');
+            $table->string('name')->default('');
+            $table->text('description')->nullable();
+            $table->tinyInteger('severity')->default(2);
+
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('device_identifier');
+
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('incident_type_id');
 
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ class CreateLocationDataTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('device_identifier');
-            $table->unsignedBigInteger('road_trip_id');
+            $table->unsignedBigInteger('road_trip_id')->nullable();
 
             $table->timestamps();
 

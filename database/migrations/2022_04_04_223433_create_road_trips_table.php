@@ -12,7 +12,7 @@ class CreateRoadTripsTable extends Migration
             $table->id();
 
             $table->string('starting_point');
-            $table->string('destination');
+            $table->string('destination')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('vehicle_id');
 
