@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthenticationController;
 use App\Http\Controllers\Api\RegistrationController;
+use App\Http\Controllers\GeoJsonLocationDataController;
 use App\Http\Controllers\IncidentTypesController;
 use App\Http\Controllers\Resource\AchievementsController;
 use App\Http\Controllers\Resource\AdminsController;
@@ -49,8 +50,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
             'false_reports' => FalseReportsController::class,
             'admins' => AdminsController::class,
         ]);
-});
 
+});
+Route::get('geojson', [GeoJsonLocationDataController::class, 'index'])->name('geojson');
 
 
 Route::post('/user/login', [AuthenticationController::class, 'store']);

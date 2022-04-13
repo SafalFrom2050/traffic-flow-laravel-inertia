@@ -11,10 +11,10 @@ class CreateRoadTripsTable extends Migration
         Schema::create('road_trips', function (Blueprint $table) {
             $table->id();
 
-            $table->string('starting_point');
+            $table->string('starting_point')->nullable();
             $table->string('destination')->nullable();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('vehicle_id');
+            $table->unsignedBigInteger('vehicle_id')->nullable();
 
 
             $table->timestamps();

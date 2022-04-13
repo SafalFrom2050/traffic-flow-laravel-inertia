@@ -17,27 +17,27 @@ class IncidentTypesSeeder extends Seeder
         [
             'name' => 'Road Block',
             'image' => 'storage/images/road-block.jpg',
-            'marker' => 'storage/images/marker/road-block-marker.png'
+            'marker' => 'storage/images/markers/road-block-marker.jpg'
         ],
         [
             'name' => 'Traffic Jam',
             'image' => 'storage/images/traffic-jam.png',
-            'marker' => 'storage/images/marker/traffic-jam-marker.png'
+            'marker' => 'storage/images/markers/traffic-jam-marker.png'
         ],
         [
             'name' => 'Construction',
             'image' => 'storage/images/construction.jpg',
-            'marker' => 'storage/images/marker/construction-marker.png'
+            'marker' => 'storage/images/markers/construction-marker.jpg'
         ],
         [
             'name' => 'Protest',
             'image' => 'storage/images/protest.png',
-            'marker' => 'storage/images/marker/protest-marker.png'
+            'marker' => 'storage/images/markers/protest-marker.png'
         ],
         [
             'name' => 'Accident',
             'image' => 'storage/images/accident.jpg',
-            'marker' => 'storage/images/marker/accident-marker.png'
+            'marker' => 'storage/images/markers/accident-marker.jpg'
         ],
 
     ];

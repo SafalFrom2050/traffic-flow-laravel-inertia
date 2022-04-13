@@ -11,6 +11,7 @@ class LocationDataRequest extends FormRequest
         return [
             'latitude' => ['required', 'string'],
             'longitude' => ['required', 'string'],
+            'speed' => ['required', 'string'],
             'road_trip_id' => ['required', 'exists:road_trips,id'],
             'device_identifier' => ['required', 'string']
         ];
