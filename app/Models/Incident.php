@@ -14,4 +14,9 @@ class Incident extends Model
     {
         return $this->belongsTo(IncidentType::class);
     }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

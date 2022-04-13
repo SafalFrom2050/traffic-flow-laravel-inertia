@@ -22,15 +22,15 @@ class LocationDataSeeder extends Seeder
             'longitude' => '85.41982430569306',
             'road_trip_id' => 1,
             'device_identifier' => 'Xiaomi',
-            'speed' => '10'
+            'speed' => '30'
         ]);
 
         LocationData::create([
             'latitude' => '27.66365782852897',
             'longitude' => '85.42093623501711',
-            'road_trip_id' => 1,
+            'road_trip_id' => 2,
             'device_identifier' => 'Xiaomi',
-            'speed' => '30'
+            'speed' => '60'
         ]);
     }
 }

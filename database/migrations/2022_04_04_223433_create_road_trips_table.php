@@ -19,8 +19,8 @@ class CreateRoadTripsTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('CASCADE');
         });
     }
 

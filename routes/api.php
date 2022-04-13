@@ -34,7 +34,7 @@ Route::get('test', function () {
     return 'test';
 });
 
-Route::group(['middleware' => 'auth:sanctum'], function () {
+Route::name('api.')->middleware('auth:sanctum')->group( function () {
     Route::apiResources(
         [
             'vehicles' => VehiclesController::class,
@@ -52,6 +52,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         ]);
 
 });
+
 Route::get('geojson', [GeoJsonLocationDataController::class, 'index'])->name('geojson');
 
 

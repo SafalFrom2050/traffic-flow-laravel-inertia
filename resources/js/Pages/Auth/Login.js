@@ -6,6 +6,7 @@ import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import LabelledInput from "@/Components/CompoundInputs/LabelledInput";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -40,9 +41,9 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Email" />
 
-                    <Input
+                    <LabelledInput
+                        label={"Email"}
                         type="text"
                         name="email"
                         value={data.email}
@@ -54,9 +55,9 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="Password" />
 
-                    <Input
+                    <LabelledInput
+                        label={"Password"}
                         type="password"
                         name="password"
                         value={data.password}

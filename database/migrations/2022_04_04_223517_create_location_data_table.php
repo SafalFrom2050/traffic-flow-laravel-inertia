@@ -19,7 +19,7 @@ class CreateLocationDataTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('road_trip_id')->references('id')->on('road_trips');
+            $table->foreign('road_trip_id')->references('id')->on('road_trips')->onDelete('CASCADE');
 
         });
     }
