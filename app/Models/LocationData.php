@@ -9,6 +9,7 @@ class LocationData extends Model
 {
     protected $guarded = ['id'];
 
+    protected $casts = ['speed' => 'double'];
 
     public function scopeRecent($query)
     {
