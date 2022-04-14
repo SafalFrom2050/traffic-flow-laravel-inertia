@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Inertia\DashboardController;
+use App\Http\Controllers\Inertia\FalseReportsController;
 use App\Http\Controllers\Inertia\IncidentsController;
 use App\Http\Controllers\Inertia\RoadTripsController;
 use App\Http\Controllers\Inertia\UsersController;
@@ -28,9 +30,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::prefix('/user-manager')->name('user-manager.')->group( function () {
         Route::get('/', [UsersController::class, 'index'])->name('index');
@@ -52,6 +52,14 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/{id}', [RoadTripsController::class, 'show'])->name('show');
         Route::delete('/{id}', [RoadTripsController::class, 'destroy'])->name('delete');
         Route::put('/{id}', [RoadTripsController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('/false-report-manager')->name('false-report-manager.')->group( function () {
+        Route::get('/', [FalseReportsController::class, 'index'])->name('index');
+        Route::get('/edit/{id}', [FalseReportsController::class, 'edit'])->name('edit');
+        Route::get('/{id}', [FalseReportsController::class, 'show'])->name('show');
+        Route::delete('/{id}', [FalseReportsController::class, 'destroy'])->name('delete');
+        Route::put('/{id}', [FalseReportsController::class, 'update'])->name('update');
     });
 });
 

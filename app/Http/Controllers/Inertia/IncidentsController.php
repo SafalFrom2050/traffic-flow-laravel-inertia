@@ -12,9 +12,13 @@ class IncidentsController extends Controller
 {
     public function index()
     {
-        $incidents = Incident::with('incidentType')->with(['user:id,fname,lname'])->paginate()->all();
+        $selectedIncident = false;
+        if (request('incident')){
+            $selectedIncident = Incident::withCount('falseReports')->whereId(\request('incident'))->get()->first();
+        }
 
-        return Inertia::render('Incident/IncidentManager', compact('incidents'));
+        $incidents = Incident::withCount('falseReports')->paginate()->all();
+        return Inertia::render('Incident/IncidentManager', compact('incidents', 'selectedIncident'));
     }
 
     public function create()

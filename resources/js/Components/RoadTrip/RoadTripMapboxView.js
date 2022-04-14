@@ -10,7 +10,7 @@ function RoadTripMapboxView({pointGeoJson}) {
                 longitude: 85.41982430569306,
                 zoom: 12
             }}
-            style={{width: "60vw", height: 400}}
+            style={{width: 'auto', height: 400}}
             mapStyle="mapbox://styles/mapbox/streets-v11"
         >
 

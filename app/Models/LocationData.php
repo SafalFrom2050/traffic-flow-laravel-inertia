@@ -3,13 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class LocationData extends Model
 {
     protected $guarded = ['id'];
 
+
+    public function scopeRecent($query)
+    {
+        return $query->whereDate('created_at', '>=',Carbon::now())
+            ->whereTime('created_at', '>=', Carbon::now()->subMinutes(30));
+    }
+
     public function roadTrip()
     {
-        $this->hasOne(RoadTrip::class);
+        return $this->hasOne(RoadTrip::class);
     }
 }

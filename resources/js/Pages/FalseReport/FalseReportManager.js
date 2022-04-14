@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Head} from "@inertiajs/inertia-react";
 import SidebarLayout from "@/Layouts/SidebarLayout";
-import IncidentsTable from "@/Components/Incident/IncidentsTable";
-import IncidentsMapboxView from "@/Components/Incident/IncidentsMapboxView";
+import FalseReportsTable from "@/Components/FalseReport/FalseReportsTable";
 import {Inertia} from "@inertiajs/inertia";
 
-function IncidentManager(props) {
+function FalseReportManager(props) {
 
     const [count, setCount] = useState(0);
 
@@ -19,24 +18,21 @@ function IncidentManager(props) {
 
     useEffect(()=>{
         if (count <= 0) return;
-        Inertia.reload({ only: ['incidents']})
+        Inertia.reload({ only: ['falseReports']})
     }, [count])
+
 
     return (
         <SidebarLayout
             auth={props.auth}
             errors={props.errors}
-            header={"Incidents"}
+            header={"Monitor False Reports"}
         >
-            <Head title="Incidents"/>
+            <Head title="Monitor False Reports"/>
 
-            <div className={'mx-auto mb-6'}>
-                <IncidentsMapboxView incidents={props.incidents} _selectedIncident={props.selectedIncident ? props.selectedIncident : {}} />
-            </div>
-
-            <IncidentsTable incidents={props.incidents}/>
+            <FalseReportsTable falseReports={props.falseReports} subHeading={props.subHeading}/>
         </SidebarLayout>
     );
 }
 
-export default IncidentManager;
+export default FalseReportManager;

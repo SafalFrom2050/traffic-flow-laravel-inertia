@@ -10,9 +10,9 @@ class RoadTripRequest extends FormRequest
     {
         return [
             'starting_point' => ['sometimes', 'string'],
-            'destination' => ['sometimes', 'string'],
+            'destination' => ['nullable', 'string'],
             'vehicle_id' => ['nullable'],
-            'user_id' => ['required', 'exists:users']
+            'user_id' => ['required', 'exists:users,id']
         ];
     }
 

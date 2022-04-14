@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Map, {Marker} from 'react-map-gl';
 import {IncidentDetailCard} from "@/Components/Incident/IncidentDetailCard";
 
-export default function IncidentsMapboxView({incidents}) {
+export default function IncidentsMapboxView({incidents, _selectedIncident = {}}) {
+
+    console.log(_selectedIncident)
 
     const [selectedIncident, setSelectedIncident] = useState({
         id: null,
@@ -13,6 +15,10 @@ export default function IncidentsMapboxView({incidents}) {
         description: '',
         severity: ''
     })
+
+    useEffect(()=>{
+        setSelectedIncident(_selectedIncident)
+    }, [])
 
     return <div className={'flex gap-x-4'}>
 
@@ -46,6 +52,6 @@ export default function IncidentsMapboxView({incidents}) {
             </Map>
         </div>
 
-        <IncidentDetailCard incident={selectedIncident}/>
+        <IncidentDetailCard incident={selectedIncident} onDelete={()=>setSelectedIncident({})}/>
     </div>;
 }

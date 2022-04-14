@@ -10,16 +10,16 @@ class CreateFalseReportsTable extends Migration
     {
         Schema::create('false_reports', function (Blueprint $table) {
             $table->id();
-
             $table->text('details');
-            $table->unsignedBigInteger('report_id');
+
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('incident_id');
 
             $table->timestamps();
 
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('report_id')->references('id')->on('reports');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('incident_id')->references('id')->on('incidents')->onDelete('CASCADE');
 
         });
     }

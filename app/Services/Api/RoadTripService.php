@@ -7,9 +7,11 @@ use App\Models\RoadTrip;
 class RoadTripService
 {
 
-    public function createRoadTrip($requestData): RoadTrip
+    public function createRoadTrip($requestData): array
     {
-        return RoadTrip::create($requestData);
+        $response['count'] = 1;
+        $response['roadTrip'] = RoadTrip::create($requestData);
+        return $response;
     }
 
     public function getRoadTrips()
@@ -19,9 +21,18 @@ class RoadTripService
         return RoadTrip::with('locationData')->where('user_id', $userId)->get();
     }
 
-    public function getAllRoadTripsInGeoJson(): array
+
+    // Gets recent location data by default for generating all location data geoJson
+    public function getAllRoadTripsInGeoJson($getRecent = true): array
     {
-        $roadTrips = RoadTrip::with(['locationData', 'vehicle'])->get();
+        if ($getRecent) {
+            $roadTrips = RoadTrip::with('locationDataRecent')
+                ->withAvg('locationData', 'speed')
+                ->with('vehicle')->get();
+        }else{
+            $roadTrips = RoadTrip::with(['locationData', 'vehicle'])
+                ->withAvg('locationData', 'speed')->get();
+        }
 
         $geoJson['type'] = 'FeatureCollection';
 
@@ -61,7 +72,10 @@ class RoadTripService
 
     public function getRoadTripData($id): array
     {
-        $roadTrip = RoadTrip::with(['locationData', 'vehicle'])->whereId($id)->get()->first();
+        $roadTrip = RoadTrip::with(['locationData', 'vehicle'])->withAvg('locationData', 'speed')
+            ->withMax('locationData', 'speed')
+            ->withMin('locationData', 'speed')
+            ->whereId($id)->get()->first();
 
         $geoJson['type'] = 'FeatureCollection';
 

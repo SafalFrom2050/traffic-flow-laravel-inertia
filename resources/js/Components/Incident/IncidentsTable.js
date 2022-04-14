@@ -88,7 +88,7 @@ function Row({incident}) {
     </tr>;
 }
 
-function UsersTable({incidents = []}) {
+function IncidentsTable({incidents = []}) {
 
     return (
         <>
@@ -108,7 +108,7 @@ function UsersTable({incidents = []}) {
                             <th className="font-normal text-left pl-16">Device</th>
                             <th className="font-normal text-left pl-16">Latitude</th>
                             <th className="font-normal text-left pl-16">Longitude</th>
-                            <th className="font-normal text-left pl-16">Reported By</th>
+                            <th className="font-normal text-left pl-16">Posted By</th>
                         </tr>
                         </thead>
                         <tbody className="w-full">
@@ -125,4 +125,4 @@ function UsersTable({incidents = []}) {
     );
 }
 
-export default UsersTable;
+export default IncidentsTable;
