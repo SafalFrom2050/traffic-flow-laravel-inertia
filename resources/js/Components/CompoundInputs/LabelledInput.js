@@ -6,6 +6,7 @@ function LabelledInput(
     {
         name,
         label,
+        pClassName="",
         lClassName,
         className,
         type = 'text',
@@ -13,11 +14,12 @@ function LabelledInput(
         autoComplete,
         required,
         isFocused,
-        handleChange
+        handleChange,
+        ...props
     }) {
     return (
-        <div>
-            <Label forInput={name} className={lClassName} value={label ? label : name} />
+        <div className={pClassName}>
+            <Label forInput={name} className={`font-bold ${lClassName}`} value={label ? label : name} />
 
             <Input
                 type={type}
@@ -28,6 +30,7 @@ function LabelledInput(
                 isFocused={isFocused}
                 handleChange={handleChange}
                 className={className}
+                {...props}
             />
         </div>
     );

@@ -31,7 +31,8 @@ class RoadTripService
                 ->with('vehicle')->get();
         }else{
             $roadTrips = RoadTrip::with(['locationData', 'vehicle'])
-                ->withAvg('locationData', 'speed')->get();
+                ->withAvg('locationData', 'speed')
+                ->get();
         }
 
         $geoJson['type'] = 'FeatureCollection';

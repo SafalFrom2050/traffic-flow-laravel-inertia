@@ -8,6 +8,7 @@ import {Inertia} from "@inertiajs/inertia";
 function IncidentManager(props) {
 
     const [count, setCount] = useState(0);
+    const [editIncident, setEditIncident] = useState(false);
 
     useEffect(() => {
         const id = setInterval(() => setCount((oldCount) => oldCount + 1), 10000);
@@ -35,6 +36,7 @@ function IncidentManager(props) {
             </div>
 
             <IncidentsTable incidents={props.incidents}/>
+
         </SidebarLayout>
     );
 }

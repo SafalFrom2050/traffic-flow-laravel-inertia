@@ -13,7 +13,7 @@ function SelectedRoadTrip({roadTrip, onDelete = {}}) {
         <div className="sm:flex items-center justify-between mb-6">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Selected
                 Road Trip</p>
-            <Link className={"mx-6"} method={"delete"} onClick={onDelete}
+            <Link className={"mx-6"} method={"delete"}
                   href={route('road-trip-manager.delete', {id: roadTrip.id})} as={"button"}>
                 <Button primary={false} danger={true}>Delete</Button>
             </Link>

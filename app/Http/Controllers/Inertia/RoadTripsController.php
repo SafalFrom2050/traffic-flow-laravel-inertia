@@ -43,9 +43,8 @@ class RoadTripsController extends Controller
         $selectedRoadTrip = $roadTripData['roadTrip'];
         return Inertia::render('RoadTrip/RoadTripManager', [
             'trafficGeoJson' => Inertia::lazy( fn() => $this->roadTripService->getRoadTripData($id)['geoJson']),
-            'selectedRoadTrip' => fn() => $this->roadTripService->getRoadTripData($id)['geoJson']
+            'selectedRoadTrip' => $selectedRoadTrip
         ]);
-//        return Inertia::render('RoadTrip/RoadTripManager', compact('trafficGeoJson', 'selectedRoadTrip'));
     }
 
     public function edit($id)

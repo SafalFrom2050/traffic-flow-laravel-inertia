@@ -21,7 +21,6 @@ function UserEdit({user, auth}) {
 
     const submit = (e) => {
         e.preventDefault();
-
         put(route('user-manager.update', {id: user.id}));
     };
 

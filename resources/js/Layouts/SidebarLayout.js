@@ -32,7 +32,11 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                             </Link>
 
                             <Link href={route('incident-manager.index')}>
-                                <SideMenu isActive={route().current('incident-manager.index')} name="Incidents"/>
+                                <SideMenu isActive={route().current('incident-manager.index')} name="Monitor Incidents"/>
+                            </Link>
+
+                            <Link href={route('incident-type-manager.index')}>
+                                <SideMenu isActive={route().current('incident-type-manager.index')} name="Manage Incidents Types"/>
                             </Link>
 
                             <Link href={route('road-trip-manager.index')}>
@@ -40,7 +44,7 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                             </Link>
 
                             <Link href={route('false-report-manager.index')}>
-                                <SideMenu isActive={route().current('false-report-manager.index')} name="Monitor False Reports"/>
+                                <SideMenu isActive={route().current('false-report-manager.index')} name="False Reports"/>
                             </Link>
 
                         </ul>

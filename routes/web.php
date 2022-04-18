@@ -3,6 +3,7 @@
 use App\Http\Controllers\Inertia\DashboardController;
 use App\Http\Controllers\Inertia\FalseReportsController;
 use App\Http\Controllers\Inertia\IncidentsController;
+use App\Http\Controllers\Inertia\IncidentTypesController;
 use App\Http\Controllers\Inertia\RoadTripsController;
 use App\Http\Controllers\Inertia\UsersController;
 use Illuminate\Foundation\Application;
@@ -44,6 +45,13 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/edit/{id}', [IncidentsController::class, 'edit'])->name('edit');
         Route::delete('/{id}', [IncidentsController::class, 'destroy'])->name('delete');
         Route::put('/{id}', [IncidentsController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('/incident-type-manager')->name('incident-type-manager.')->group( function () {
+        Route::get('/', [IncidentTypesController::class, 'index'])->name('index');
+        Route::get('/edit/{id}', [IncidentTypesController::class, 'edit'])->name('edit');
+        Route::delete('/{id}', [IncidentTypesController::class, 'destroy'])->name('delete');
+        Route::put('/{id}', [IncidentTypesController::class, 'update'])->name('update');
     });
 
     Route::prefix('/road-trip-manager')->name('road-trip-manager.')->group( function () {
