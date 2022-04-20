@@ -28,8 +28,6 @@ class VehiclesController extends Controller
 
 //        $vehicles = Vehicle::all();
 
-        dd($vehicles);
-
         return Inertia::render('Vehicle/VehicleManager', compact('vehicles'));
     }
 

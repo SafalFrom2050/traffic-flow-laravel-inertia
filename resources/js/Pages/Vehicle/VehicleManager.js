@@ -1,8 +1,7 @@
 import React from 'react';
 import {Head} from "@inertiajs/inertia-react";
-import IncidentsMapboxView from "@/Components/Incident/IncidentsMapboxView";
-import IncidentsTable from "@/Components/Incident/IncidentsTable";
 import SidebarLayout from "@/Layouts/SidebarLayout";
+import VehiclesTable from "@/Components/Vehicle/VehiclesTable";
 
 function VehicleManager(props) {
     return (
@@ -14,7 +13,7 @@ function VehicleManager(props) {
             <Head title="Public Vehicles"/>
 
 
-            <IncidentsTable incidents={props.incidents}/>
+            <VehiclesTable vehicles={props.vehicles}/>
 
         </SidebarLayout>
     );
