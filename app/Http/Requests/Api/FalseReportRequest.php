@@ -9,9 +9,9 @@ class FalseReportRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => ['required', 'exists:users,id'],
+            'user_id' => ['required', 'exists:users,id', 'numeric'],
             'details' => ['nullable'],
-            'incident_id' => ['required', 'exists:incidents,id']
+            'incident_id' => ['required', 'exists:incidents,id', 'numeric']
         ];
     }
 
