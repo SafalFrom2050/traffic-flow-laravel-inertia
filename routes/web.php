@@ -6,6 +6,7 @@ use App\Http\Controllers\Inertia\IncidentsController;
 use App\Http\Controllers\Inertia\IncidentTypesController;
 use App\Http\Controllers\Inertia\RoadTripsController;
 use App\Http\Controllers\Inertia\UsersController;
+use App\Http\Controllers\Resource\VehiclesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -70,6 +71,14 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/{id}', [FalseReportsController::class, 'show'])->name('show');
         Route::delete('/{id}', [FalseReportsController::class, 'destroy'])->name('delete');
         Route::put('/{id}', [FalseReportsController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('/vehicle-manager')->name('vehicle-manager.')->group( function () {
+        Route::get('/', [VehiclesController::class, 'index'])->name('index');
+        Route::get('/edit/{id}', [VehiclesController::class, 'edit'])->name('edit');
+        Route::get('/{id}', [VehiclesController::class, 'show'])->name('show');
+        Route::delete('/{id}', [VehiclesController::class, 'destroy'])->name('delete');
+        Route::put('/{id}', [VehiclesController::class, 'update'])->name('update');
     });
 });
 

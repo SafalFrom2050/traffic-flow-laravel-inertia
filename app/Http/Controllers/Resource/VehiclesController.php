@@ -7,20 +7,22 @@ use App\Http\Requests\Api\VehicleCreateRequest;
 use App\Models\RoadTrip;
 use App\Models\Vehicle;
 use App\Models\VehicleType;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class VehiclesController extends Controller
 {
     public function index()
     {
-        return Vehicle::all();
+        $vehicles = Vehicle::whereHas('roadTrip', function ($query) {
+            $query->where('updated_at', Carbon::now()->subMinutes(30));
+            $query->where('destination', null);
+        })->whereHas('vehicleType', function ($query) {
+            $query->where('is_public', true);
+        })->get();
 
-
-
-
-
-
-
+        return Inertia::render('Vehicle/VehicleManager', compact('vehicles'));
     }
 
     public function create()

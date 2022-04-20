@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Link} from "@inertiajs/inertia-react";
 import MenuField from "@/Components/Table/MenuField";
 
 function Row({incident}) {

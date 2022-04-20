@@ -40,7 +40,11 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                             </Link>
 
                             <Link href={route('road-trip-manager.index')}>
-                                <SideMenu isActive={route().current('road-trip-manager.index')} name="Road Trips"/>
+                                <SideMenu isActive={route().current('road-trip-manager.index')} name="Monitor Traffic"/>
+                            </Link>
+
+                            <Link href={route('vehicle-manager.index')}>
+                                <SideMenu isActive={route().current('vehicle-manager.index')} name="Public Vehicles"/>
                             </Link>
 
                             <Link href={route('false-report-manager.index')}>
