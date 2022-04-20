@@ -11,7 +11,16 @@ class FalseReportsController extends Controller
 {
     public function index()
     {
-        //
+        if (request('incident_id')) {
+            $falseReports = FalseReport::where('incident_id', request('incident_id'))->latest('created_at')->get();
+        }else {
+            $falseReports = FalseReport::latest('created_at')->get();
+        }
+
+        $response['false_reports'] = $falseReports;
+        $response['count'] = $falseReports->count();
+
+        return $response;
     }
 
     public function create()
@@ -29,7 +38,7 @@ class FalseReportsController extends Controller
 
     public function show(FalseReport $falseReport)
     {
-        //
+
     }
 
     public function edit(FalseReport $falseReport)
