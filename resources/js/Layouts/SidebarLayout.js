@@ -99,7 +99,7 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                                                 <div className="w-full flex items-center justify-between px-6 pt-4">
                                                     <div className="flex items-center">
                                                         <img alt="profile-pic"
-                                                             src={'/storage/images/default-profile.jpg'}
+                                                             src={auth.user.profile_image}
                                                              className="w-8 h-8 rounded-md"/>
                                                         <p className="md:text-xl text-gray-800 text-base leading-4 ml-2">
                                                             {auth ? `${auth.user.fname} ${auth.user.lname}` : 'User'}
@@ -160,7 +160,7 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                                                 )}
                                                 <div className="relative">
                                                     <img className="rounded-full h-10 w-10 object-cover"
-                                                         src={'/storage/images/default-profile.jpg'}
+                                                         src={auth.user.profile_image}
                                                          alt="avatar"/>
                                                 </div>
                                             </div>

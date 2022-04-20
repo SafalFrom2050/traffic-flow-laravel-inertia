@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import {Head} from "@inertiajs/inertia-react";
 import SidebarLayout from "@/Layouts/SidebarLayout";
 import IncidentTypesTable from "@/Components/IncidentType/IncidentTypesTable";
-import EditIncidentType from "@/Pages/IncidentType/EditIncidentType";
+import EditIncidentType from "@/Components/IncidentType/EditIncidentType";
+import CreateIncidentType from "@/Components/IncidentType/CreateIncidentType";
 
 function IncidentTypeManager(props) {
 
-    const [selectedIncidentType, setSelectedIncidentType] = useState(false);
+    const [editingIncidentType, setEditingIncidentType] = useState(false);
+    const [creatingIncidentType, setCreatingIncidentType] = useState(false);
 
     return (
         <SidebarLayout
@@ -16,10 +18,18 @@ function IncidentTypeManager(props) {
         >
             <Head title="Incidents Types"/>
 
-            <IncidentTypesTable incidentTypes={props.incidentTypes} setSelected={(incidentType)=>setSelectedIncidentType(incidentType)} />
+            <IncidentTypesTable
+                incidentTypes={props.incidentTypes}
+                setSelected={(incidentType)=>setEditingIncidentType(incidentType)}
+                onCreate={()=>setCreatingIncidentType(true)}
+            />
 
-            {selectedIncidentType &&
-                <EditIncidentType incidentType={selectedIncidentType} onHide={()=>setSelectedIncidentType(false)} />
+            {editingIncidentType &&
+                <EditIncidentType incidentType={editingIncidentType} onHide={()=>setEditingIncidentType(false)} />
+            }
+
+            {creatingIncidentType &&
+                <CreateIncidentType onHide={()=>setCreatingIncidentType(false)} />
             }
         </SidebarLayout>
     );

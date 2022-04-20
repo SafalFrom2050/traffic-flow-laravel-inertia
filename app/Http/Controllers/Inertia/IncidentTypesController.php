@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Inertia;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Resource\IncidentTypeCreateRequest;
 use App\Http\Requests\Resource\IncidentTypeUpdateRequest;
 use App\Models\IncidentType;
 use App\Services\Web\IncidentTypeService;
@@ -32,12 +33,13 @@ class IncidentTypesController extends Controller
 
     public function create()
     {
-        //
+
     }
 
-    public function store(Request $request)
+    public function store(IncidentTypeCreateRequest $request)
     {
-        //
+        $this->incidentTypeService->createIncidentType($request->validated());
+        return back();
     }
 
     public function show($id)

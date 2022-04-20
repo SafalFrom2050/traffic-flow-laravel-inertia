@@ -19,7 +19,6 @@ function EditIncidentType({incidentType, auth, onHide}) {
     };
 
     const submit = (e) => {
-        e.preventDefault();
         post(route('incident-type-manager.update', {_method: 'put', id: incidentType.id}));
         onHide(e)
     };

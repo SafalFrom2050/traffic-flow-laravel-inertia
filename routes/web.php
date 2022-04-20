@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::prefix('/user-manager')->name('user-manager.')->group( function () {
         Route::get('/', [UsersController::class, 'index'])->name('index');
+        Route::post('/', [UsersController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [UsersController::class, 'edit'])->name('edit');
         Route::delete('/{id}', [UsersController::class, 'destroy'])->name('delete');
         Route::put('/{id}', [UsersController::class, 'update'])->name('update');
@@ -49,6 +50,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::prefix('/incident-type-manager')->name('incident-type-manager.')->group( function () {
         Route::get('/', [IncidentTypesController::class, 'index'])->name('index');
+        Route::post('/', [IncidentTypesController::class, 'store'])->name('store');
         Route::get('/edit/{id}', [IncidentTypesController::class, 'edit'])->name('edit');
         Route::delete('/{id}', [IncidentTypesController::class, 'destroy'])->name('delete');
         Route::put('/{id}', [IncidentTypesController::class, 'update'])->name('update');

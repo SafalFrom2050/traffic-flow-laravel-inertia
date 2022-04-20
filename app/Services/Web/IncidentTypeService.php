@@ -42,4 +42,29 @@ class IncidentTypeService
         }
         $incident->update($data);
     }
+
+    public function createIncidentType(array $request)
+    {
+        $data = [
+            'name' => $request['name'],
+            'default_severity' => $request['default_severity']
+        ];
+        if ($request['image']) {
+            $file = $request['image'];
+            $filename = date('YmdHis') . $file->getClientOriginalName();
+            $file->move(public_path($this->imagePath), $filename);
+            $data['image'] = $this->imagePath . '/' . $filename;
+
+        }
+
+        if ($request['marker']) {
+            $file = $request['marker'];
+            $filename = date('YmdHis') . $file->getClientOriginalName();
+            $file->move(public_path($this->markerPath), $filename);
+            $data['marker'] = $this->markerPath . '/' . $filename;
+
+        }
+
+        return IncidentType::create($data);
+    }
 }
