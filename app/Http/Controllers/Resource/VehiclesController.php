@@ -15,10 +15,14 @@ class VehiclesController extends Controller
 {
     public function index()
     {
-        $vehicles = Vehicle::whereHas('roadTrip', function ($query) {
-            $query->where('updated_at', Carbon::now()->subMinutes(30));
-            $query->where('destination', null);
-        })->whereHas('vehicleType', function ($query) {
+//        $vehicles = Vehicle::whereHas('roadTrip', function ($query) {
+//            $query->where('updated_at', Carbon::now()->subMinutes(30));
+//            $query->where('destination', null);
+//        })->whereHas('vehicleType', function ($query) {
+//            $query->where('is_public', true);
+//        })->get();
+
+        $vehicles = Vehicle::whereHas('vehicleType', function ($query) {
             $query->where('is_public', true);
         })->get();
 
