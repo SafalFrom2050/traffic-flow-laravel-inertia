@@ -14,6 +14,7 @@ class VehiclesController extends Controller
     public function index()
     {
         return Vehicle::all();
+
     }
 
     public function create()
