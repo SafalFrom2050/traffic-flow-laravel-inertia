@@ -26,6 +26,10 @@ class VehiclesController extends Controller
             $query->where('is_public', true);
         })->get();
 
+        $vehicles = Vehicle::all();
+
+        dd($vehicles);
+
         return Inertia::render('Vehicle/VehicleManager', compact('vehicles'));
     }
 
