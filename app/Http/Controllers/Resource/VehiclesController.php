@@ -15,6 +15,12 @@ class VehiclesController extends Controller
     {
         return Vehicle::all();
 
+
+
+
+
+
+
     }
 
     public function create()
