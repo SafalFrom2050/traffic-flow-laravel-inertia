@@ -10,7 +10,7 @@ class CreateFalseReportsTable extends Migration
     {
         Schema::create('false_reports', function (Blueprint $table) {
             $table->id();
-            $table->text('details');
+            $table->text('details')->nullable();
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('incident_id');
