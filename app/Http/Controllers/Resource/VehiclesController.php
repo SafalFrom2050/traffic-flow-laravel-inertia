@@ -26,7 +26,7 @@ class VehiclesController extends Controller
             $query->where('is_public', true);
         })->get();
 
-        $vehicles = Vehicle::all();
+//        $vehicles = Vehicle::all();
 
         dd($vehicles);
 
