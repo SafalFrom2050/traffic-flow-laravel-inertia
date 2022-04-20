@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
             $table->date('dob')->nullable();
-            $table->boolean('is_approved')->default(0);
+            $table->boolean('is_approved')->default(false);
             $table->integer('reward_points')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
