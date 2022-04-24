@@ -1,4 +1,5 @@
 <?php
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 
 namespace App\Http\Controllers\Auth;
 
@@ -8,12 +9,7 @@ use Illuminate\Http\Request;
 
 class EmailVerificationNotificationController extends Controller
 {
-    /**
-     * Send a new email verification notification.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {

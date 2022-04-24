@@ -1,4 +1,5 @@
 <?php
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 
 namespace App\Http\Controllers\Auth;
 
@@ -14,24 +15,13 @@ use Inertia\Inertia;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     *
-     * @return \Inertia\Response
-     */
+
     public function create()
     {
         return Inertia::render('Auth/Register');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
     public function store(Request $request)
     {
         $request->validate([

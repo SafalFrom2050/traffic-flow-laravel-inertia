@@ -12,6 +12,7 @@ export default function NavLink({ href, active, children }) {
             }
         >
             {children}
+            {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
         </Link>
     );
 }

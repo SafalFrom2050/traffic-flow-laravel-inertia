@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 export default function Input({
     type = 'text',
     name,

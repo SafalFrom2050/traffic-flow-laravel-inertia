@@ -18,6 +18,7 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
             <div className="w-full h-full bg-gray-200">
                 <div className="flex flex-no-wrap">
                     {/* Sidebar starts */}
+                    {/* TAILWIND STYLES FROM: https://app.tailwinduikit.com/ */}
                     <div className="absolute top-0 lg:sticky w-64 min-w-64 h-screen shadow bg-gray-100 hidden lg:block">
                         <div className="w-full flex items-center justify-center py-6">
                             <ApplicationLogo mClass={"h-28 w-28"}/>
@@ -53,73 +54,7 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
 
                         </ul>
                     </div>
-                    {/*Mobile responsive sidebar*/}
-                    <div
-                        className={show ? "w-full h-full absolute z-40  transform  translate-x-0 " : "   w-full h-full absolute z-40  transform -translate-x-full"}
-                        id="mobile-nav">
-                        <div className="bg-gray-800 opacity-50 absolute h-full w-full lg:hidden"
-                             onClick={() => setShow(!show)}/>
-                        <div
-                            className="absolute z-40 sm:relative w-64 md:w-96 shadow pb-4 bg-gray-100 lg:hidden transition duration-150 ease-in-out h-full">
-                            <div className="flex flex-col justify-between w-full">
-                                <div>
-                                    <div className="flex items-center justify-end p-4">
-                                        <div id="closeSideBar" className="flex items-center justify-center h-10 w-10"
-                                             onClick={() => setShow(!show)}>
-                                            <XIcon className={'w-5 h-5'} />
-                                        </div>
-                                    </div>
-                                    <ul aria-orientation="vertical" className="py-6">
-                                        <li className="pl-6 cursor-pointer text-white text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                            <div className="flex items-center">
-                                                <span
-                                                    className="ml-2 xl:text-base md:text-2xl text-base">Dashboard</span>
-                                            </div>
-                                        </li>
-                                        <li className="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                            <div className="flex items-center">
 
-                                                <span
-                                                    className="ml-2 xl:text-base md:text-2xl text-base">Products</span>
-                                            </div>
-                                        </li>
-                                        <li className="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                            <div className="flex items-center">
-
-                                                <span
-                                                    className="ml-2 xl:text-base md:text-2xl text-base">Performance</span>
-                                            </div>
-                                        </li>
-                                        <li className="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                                            <div className="flex items-center">
-
-                                                <span
-                                                    className="ml-2 xl:text-base md:text-2xl text-base">Deliverables</span>
-                                            </div>
-                                        </li>
-
-                                        <div className="my-4">
-                                            <div className="border-t border-gray-300">
-                                                <div className="w-full flex items-center justify-between px-6 pt-4">
-                                                    <div className="flex items-center">
-                                                        <img alt="profile-pic"
-                                                             src={auth.user.profile_image}
-                                                             className="w-8 h-8 rounded-md"/>
-                                                        <p className="md:text-xl text-gray-800 text-base leading-4 ml-2">
-                                                            {auth ? `${auth.user.fname} ${auth.user.lname}` : 'User'}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    {/*Mobile responsive sidebar*/}
-                    {/* Sidebar ends */}
                     <div className="w-full">
                         {/* Navigation starts */}
                         <nav
@@ -188,10 +123,8 @@ export default function SidebarLayout({children, header, subHeader, auth}) {
                         {/* Navigation ends */}
 
                         <div className="container mx-auto py-10 md:w-5/6 w-11/12">
-                            {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
-                            {/*<div className="">*/}
+
                             {children}
-                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

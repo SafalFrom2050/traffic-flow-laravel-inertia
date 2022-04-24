@@ -1,4 +1,6 @@
 <?php
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
+
 
 namespace App\Http\Controllers\Auth;
 
@@ -11,22 +13,13 @@ use Inertia\Inertia;
 
 class ConfirmablePasswordController extends Controller
 {
-    /**
-     * Show the confirm password view.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function show()
     {
         return Inertia::render('Auth/ConfirmPassword');
     }
 
-    /**
-     * Confirm the user's password.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return mixed
-     */
+
     public function store(Request $request)
     {
         if (! Auth::guard('web')->validate([

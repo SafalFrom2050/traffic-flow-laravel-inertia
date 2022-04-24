@@ -4,6 +4,7 @@ export default function ValidationErrors({ errors }) {
     return (
         Object.keys(errors).length > 0 && (
             <div className="mb-4">
+                {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
                 <div className="font-medium text-red-600">Whoops! Something went wrong.</div>
 
                 <ul className="mt-3 list-disc list-inside text-sm text-red-600">

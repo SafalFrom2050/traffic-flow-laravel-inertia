@@ -1,5 +1,4 @@
 import React from 'react';
-import Authenticated from '@/Layouts/Authenticated';
 import {Head} from '@inertiajs/inertia-react';
 import SidebarLayout from "@/Layouts/SidebarLayout";
 import IncidentsTable from "@/Components/Incident/IncidentsTable";

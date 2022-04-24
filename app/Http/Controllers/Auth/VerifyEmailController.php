@@ -1,4 +1,5 @@
 <?php
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 
 namespace App\Http\Controllers\Auth;
 
@@ -9,12 +10,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class VerifyEmailController extends Controller
 {
-    /**
-     * Mark the authenticated user's email address as verified.
-     *
-     * @param  \Illuminate\Foundation\Auth\EmailVerificationRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function __invoke(EmailVerificationRequest $request)
     {
         if ($request->user()->hasVerifiedEmail()) {

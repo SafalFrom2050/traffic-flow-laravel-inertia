@@ -14,6 +14,7 @@ export default function ResponsiveNavLink({ method = 'get', as = 'a', href, acti
             } text-base font-medium focus:outline-none transition duration-150 ease-in-out`}
         >
             {children}
+            {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
         </Link>
     );
 }

@@ -1,3 +1,4 @@
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 import React, { useState, useContext } from 'react';
 import { Link } from '@inertiajs/inertia-react';
 import { Transition } from '@headlessui/react';

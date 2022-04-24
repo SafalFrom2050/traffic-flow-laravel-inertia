@@ -1,3 +1,4 @@
+// {/* CODE FROM: https://laravel.com/docs/9.x/starter-kits */}
 import React from 'react';
 
 export default function Checkbox({ name, value, handleChange }) {
