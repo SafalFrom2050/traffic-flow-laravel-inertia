@@ -1,4 +1,4 @@
-# Traffic Monitoring System Based on Crowdsourced Smartphone GPS Data  .
+# Traffic Monitoring System Based on Crowdsourced Smartphone GPS Data
 
 ## Development environment setup
 - From the project root directory,
@@ -23,21 +23,27 @@ Then the site should be accessible via browser in `http://locahost:8000/`.
         - Run `vendor/bin/phpunit`. It generates report in report dir in your project
         
 
-## Screenshots
 
-### Web App
-#### Dashboard![Admin Dashboard](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/dashboard.jpeg)
+### Screenshots
 
-#### Monitor Live Incidents![Monitor Live Incidents](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/monitor-incidents.jpeg)
+#### Web App
 
-#### Monitor Live Traffic![Monitor Live Traffic](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/monitor-traffic.jpeg)
-
-#### Manage Incident Types![Manage Incidents Type](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/incidents-type.jpeg)
-
-#### Monitor False Reports![Monitor False Reports](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/false-reports.jpeg)
-
-### Android App
-#### Monitor Incidents![Monitor Live Incidents](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Android/275900287_393020592444098_8529507673915566602_n.png)
+##### Monitor Live Traffic
+![Monitor Live Traffic](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/monitor-traffic.jpeg)
 
 
-#### Monitor Live Traffic![Monitor Live Traffic](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Android/278706467_740366900484412_6616045705518471571_n.png)
+| Dashboard | Monitor Live Incidents |
+|--|--|
+| ![Admin Dashboard](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/dashboard.jpeg) | ![Monitor Live Incidents](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/monitor-incidents.jpeg) |
+
+
+| Monitor False Reports | Manage Incident Types |
+|--|--|
+| ![Monitor False Reports](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/false-reports.jpeg) | ![Manage Incidents Type](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Web/incidents-type.jpeg) |
+
+
+#### Android App
+
+|Monitor Incidents | Monitor Live Traffic |
+|--|--|
+| ![Monitor Live Incidents](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Android/275900287_393020592444098_8529507673915566602_n.png) | ![Monitor Live Traffic](https://raw.githubusercontent.com/SafalFrom2050/traffic-flow-laravel-inertia/main/screenshots/Android/278706467_740366900484412_6616045705518471571_n.png) |
